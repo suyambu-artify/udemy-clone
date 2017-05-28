@@ -4,17 +4,19 @@
             <img class="logo" width="125" src="https://www.udemy.com/staticx/udemy/images/v5/logo-green.svg" alt="udemy-logo" />
             <div class="dropdown-outer">
                 <div id="category-select" class="select-option">
-                    <span>Categories</span>
+                    <span><a href="{{ route('home') }}">Categories</a></span>
 
                     <div class="categories">
                         <ul>
                             @foreach($categories as $i => $category)
                                 <li>
-                                    <span class="category-main"><a href="{{ route('course-category', ['category' => strtolower($category->title)]) }}">{{ $category->title }}</a></span>
+                                    <span class="category-main"><a href="{{ route('course-category', ['category' => $category->slug]) }}">{{ $category->title }}</a></span>
 
                                     <ul class="category-selection skin-{{ $i }}">
-                                        @foreach($category->subcategory as $category)
-                                            <li>{{ $category->title }}</li>
+                                        @foreach($category->subcategory as $sub)
+                                            <li>
+                                            <a href="{{ route('category-specific', ['category' => $category->slug, 'sub-category' => $sub->slug]) }}">{{ $sub->title }}</a>
+                                            </li>
                                         @endforeach
                                     </ul>
 
@@ -36,7 +38,7 @@
                 <span>Instructor</span>
             </div>
             <div class="select-option">
-                <span>My Courses</span>
+                <span><a href="{{ route('user-courses') }}">My Courses</a></span>
             </div>
         </div>
 

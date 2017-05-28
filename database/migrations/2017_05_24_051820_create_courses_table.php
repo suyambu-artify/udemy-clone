@@ -13,14 +13,18 @@ class CreateCoursesTable extends Migration
      */
     public function up()
     {
+        Schema::disableForeignKeyConstraints();
+        
         Schema::create('courses', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
             $table->string('image');
             $table->integer('author_id')->unsigned();
             $table->foreign('author_id')->references('id')->on('users');
-            $table->string('category');
-            $table->string('sub_category');
+            $table->integer('category_id')->unsigned();
+            $table->foreign('category_id')->references('id')->on('categories');
+            $table->integer('sub_category_id')->unsigned();
+            $table->foreign('sub_category_id')->references('id')->on('sub_categories');
             $table->decimal('price', 5, 2);
         });
     }
