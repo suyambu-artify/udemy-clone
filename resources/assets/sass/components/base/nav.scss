@@ -55,6 +55,22 @@ nav {
 		}
 	}
 
+	.category-selection {
+		background: #02A1A5;
+		color: #fff;
+		position: absolute;
+    	top: 0;
+    	left: 250px;
+	}
+	
+	.categories > ul > li ul {
+    	display: none;   
+	}
+
+	.categories > ul > li:hover ul {
+    	display: block;
+	}
+
 	.nav-search {
 		float: left;
 		width: 52%;
