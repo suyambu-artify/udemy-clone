@@ -24,7 +24,7 @@ class CourseController extends Controller
 
     public function show(Request $request)
     {
-        $courses = Course::where('category', '=', $request->category)->get();
+        $courses = Course::all();
         return view('course.index', compact('courses'));
     }
 }
