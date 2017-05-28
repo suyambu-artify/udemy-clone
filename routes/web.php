@@ -16,4 +16,5 @@
 Auth::routes();
 Route::get('/', array('as' => 'home', 'uses' => 'CourseController@index'));
 Route::get('/courses', 'CourseController@index')->middleware('auth')->name('home');
+Route::get('/courses/{category}', 'CourseController@show')->name('course-category');
 Route::get('/my-courses', 'CourseController@userCourses')->middleware('auth')->name('user-courses');

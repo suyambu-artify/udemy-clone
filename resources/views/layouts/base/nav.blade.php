@@ -10,7 +10,7 @@
                         <ul>
                             @foreach($categories as $i => $category)
                                 <li>
-                                    <span class="category-main">{{ $category->title }}</span>
+                                    <span class="category-main"><a href="{{ route('course-category', ['category' => strtolower($category->title)]) }}">{{ $category->title }}</a></span>
 
                                     <ul class="category-selection skin-{{ $i }}">
                                         @foreach($category->subcategory as $category)

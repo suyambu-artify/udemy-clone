@@ -21,4 +21,10 @@ class CourseController extends Controller
     	$courses = Course::paginate(20);
     	return view('course.index', compact('courses'));
     }
+
+    public function show(Request $request)
+    {
+        $courses = Course::where('category', '=', $request->category)->get();
+        return view('course.index', compact('courses'));
+    }
 }
