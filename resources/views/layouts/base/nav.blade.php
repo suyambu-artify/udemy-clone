@@ -38,7 +38,7 @@
                 <span>Instructor</span>
             </div>
             <div class="select-option">
-                <span>My Courses</span>
+                <span><a href="{{ route('user-courses') }}">My Courses</a></span>
             </div>
         </div>
 
