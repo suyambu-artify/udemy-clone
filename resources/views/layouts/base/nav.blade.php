@@ -4,7 +4,7 @@
             <img class="logo" width="125" src="https://www.udemy.com/staticx/udemy/images/v5/logo-green.svg" alt="udemy-logo" />
             <div class="dropdown-outer">
                 <div id="category-select" class="select-option">
-                    <span>Categories</span>
+                    <span><a href="{{ route('home') }}">Categories</a></span>
 
                     <div class="categories">
                         <ul>

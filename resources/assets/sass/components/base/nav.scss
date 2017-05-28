@@ -34,6 +34,11 @@ nav {
 	
 	#category-select {
 		position: relative;
+
+		a {
+			color: inherit;
+			text-decoration: none;
+		}
 	}
 	#category-select:hover .categories {
 		display: block;
