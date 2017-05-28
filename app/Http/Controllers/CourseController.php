@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Course;
+use App\Models\Category;
+use App\Models\SubCategory;
 
 class CourseController extends Controller
 {
@@ -24,7 +26,16 @@ class CourseController extends Controller
 
     public function show(Request $request)
     {
-        $courses = Course::all();
+        $category = Category::where('slug', '=', $request->category)->first();
+        $courses = Course::where('category_id', '=', $category->id)->get();
+        return view('course.index', compact('courses'));
+    }
+
+    public function showSpecific(Request $request)
+    {
+
+        $specific = SubCategory::where('slug', '=', $request->subCategory)->first();
+        $courses = Course::where('sub_category_id', '=', $specific->id)->get();
         return view('course.index', compact('courses'));
     }
 }

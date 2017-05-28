@@ -68,6 +68,10 @@ nav {
 		position: absolute;
     	top: 0;
     	left: 250px;
+
+    	a {
+    		color: inherit;
+    	}
 	}
 	
 	.categories > ul > li ul {

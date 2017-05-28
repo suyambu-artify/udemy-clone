@@ -18,6 +18,7 @@ class SubcategoriesTableSeeder extends Seeder
     	foreach($defaults as $i) {
     		DB::table('sub_categories')->insert([
     			'title' => 'sub-' . $i,
+                'slug' => 'sub-' . $i,
     		]);
     	}
         

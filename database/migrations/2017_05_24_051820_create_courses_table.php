@@ -14,7 +14,7 @@ class CreateCoursesTable extends Migration
     public function up()
     {
         Schema::disableForeignKeyConstraints();
-
+        
         Schema::create('courses', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
