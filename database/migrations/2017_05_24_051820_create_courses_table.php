@@ -17,6 +17,8 @@ class CreateCoursesTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('image');
+            $table->integer('author_id')->unsigned();
+            $table->foreign('author_id')->references('id')->on('users');
             $table->string('category');
             $table->string('sub_category');
             $table->decimal('price', 5, 2);

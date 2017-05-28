@@ -11,10 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Auth::routes();
-
-Route::get('/', 'CourseController@index');
+Route::get('/', array('as' => 'home', 'uses' => 'CourseController@index'));
+Route::get('/courses', 'CourseController@index')->middleware('auth')->name('home');
+Route::get('/my-courses', 'CourseController@userCourses')->middleware('auth')->name('user-courses');

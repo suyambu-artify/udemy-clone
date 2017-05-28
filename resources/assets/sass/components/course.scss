@@ -1,0 +1,25 @@
+.course-item-container {
+	width: 220px;
+	text-wrap: none;
+	background: #fff;
+
+	h3 {
+		overflow: hidden;
+	    text-overflow: ellipsis;
+	    white-space: normal;
+	    font-weight: 600;
+	    min-height: 42px;
+	    margin: 15px 0 0 0;
+	    font-size: 15px;
+	    color: #333;
+	}
+
+	.course-item-bottom {
+		padding:15px;
+	}
+
+	.course-item-price {
+		color: #17aa1c;
+		font-size: 18px;
+	}
+}

@@ -16,6 +16,7 @@ class CoursesTableSeeder extends Seeder
         	'image' => 'http://placehold.it/250x250',
         	'category' => 'development',
         	'sub_category' => 'web-development',
+            'author_id' => 1,
         	'price' => 10.00
         ]);
 
@@ -24,6 +25,7 @@ class CoursesTableSeeder extends Seeder
         	'image' => 'http://placehold.it/250x250',
         	'category' => 'development',
         	'sub_category' => 'web-development',
+            'author_id' => 1,
         	'price' => 10.00
         ]);
 
@@ -32,6 +34,7 @@ class CoursesTableSeeder extends Seeder
         	'image' => 'http://placehold.it/250x250',
         	'category' => 'development',
         	'sub_category' => 'web-development',
+            'author_id' => 1,
         	'price' => 10.00
         ]);
 
@@ -40,6 +43,7 @@ class CoursesTableSeeder extends Seeder
         	'image' => 'http://placehold.it/250x250',
         	'category' => 'development',
         	'sub_category' => 'web-development',
+            'author_id' => 1,
         	'price' => 10.00
         ]);
     }

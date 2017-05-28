@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -15,7 +16,46 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
+        <nav>
+            <div class="nav-top">
+                <div class="clearfix">
+                    <img class="logo" width="125" src="https://www.udemy.com/staticx/udemy/images/v5/logo-green.svg" alt="udemy-logo" />
+                    <div class="dropdown-outer">
+                        <div class="select-option">
+                            <span>Categories</span>
+                        </div>
+                    </div>
+                    <div class="nav-search">
+                        <form class="form">
+                            <input autocomplete="false" type="text" name="search" />
+                            <button class="nav-btn fa fa-search"></button>
+                        </form>
+                    </div>
+                    <div class="select-option">
+                        <span>Instructor</span>
+                    </div>
+                    <div class="select-option">
+                        <span>My Courses</span>
+                    </div>
+                </div>
+            </div>
+
+            <ul class="sub-nav text-center">
+                <li>Development</li>
+                <li>Business</li>
+                <li>IT &amp; Software</li>
+                <li>Personal Development</li>
+                <li>Design</li>
+                <li>Marketing</li>
+                <li>Office Productivity</li>
+                <li>Music</li>
+                <li>Health &amp; Fitness</li>
+            </ul>
+
+        </nav>
+
+
+        {{-- <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
 
@@ -69,7 +109,7 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav> --}}
 
         @yield('content')
     </div>
