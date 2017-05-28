@@ -21,9 +21,19 @@
                 <div class="clearfix">
                     <img class="logo" width="125" src="https://www.udemy.com/staticx/udemy/images/v5/logo-green.svg" alt="udemy-logo" />
                     <div class="dropdown-outer">
-                        <div class="select-option">
+                        <div id="category-select" class="select-option">
                             <span>Categories</span>
+
+                            <div class="categories">
+                                <ul>
+                                    @foreach($categories as $category)
+                                        <li>{{ $category->title }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+
                         </div>
+                        
                     </div>
                     <div class="nav-search">
                         <form class="form">
@@ -38,6 +48,8 @@
                         <span>My Courses</span>
                     </div>
                 </div>
+
+                
             </div>
 
             <ul class="sub-nav text-center">

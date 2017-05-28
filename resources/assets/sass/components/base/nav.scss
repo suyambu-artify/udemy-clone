@@ -1,6 +1,13 @@
 nav {
 	background: #fff;
 	margin-bottom: 40px;
+	ul {
+		margin: 0;
+		padding: 0;
+	}
+	li {
+		list-style: none;
+	}
 
 	.nav-top {
 		border-bottom: 1px solid #ddd;
@@ -22,6 +29,29 @@ nav {
 
 		:hover {
 			cursor: pointer;
+		}
+	}
+	
+	#category-select {
+		position: relative;
+	}
+	#category-select:hover .categories {
+		display: block;
+		
+	}
+
+	.categories {
+		font-weight: lighter;
+		position: absolute;
+		top: 48px;
+		left: 0;
+		background: #fff;
+		z-index: 999;
+		display: none;
+
+		li {
+			padding: 8px 0 8px 20px;
+			min-width: 250px;
 		}
 	}
 
