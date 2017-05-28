@@ -8,11 +8,11 @@
 
                     <div class="categories">
                         <ul>
-                            @foreach($categories as $category)
+                            @foreach($categories as $i => $category)
                                 <li>
                                     <span class="category-main">{{ $category->title }}</span>
 
-                                    <ul class="category-selection">
+                                    <ul class="category-selection skin-{{ $i }}">
                                         @foreach($category->subcategory as $category)
                                             <li>{{ $category->title }}</li>
                                         @endforeach
