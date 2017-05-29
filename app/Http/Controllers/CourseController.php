@@ -38,4 +38,11 @@ class CourseController extends Controller
         $courses = Course::where('sub_category_id', '=', $specific->id)->get();
         return view('course.index', compact('courses'));
     }
+
+    public function myDetailCourse(Request $request)
+    {
+
+        $course = Course::where('slug', '=', $request->slug)->first();
+        return view('course.show', compact('course'));
+    }
 }

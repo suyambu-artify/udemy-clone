@@ -17,7 +17,8 @@ class CoursesTableSeeder extends Seeder
         	'category_id' => 1,
         	'sub_category_id' => 1,
             'author_id' => 1,
-        	'price' => 10.00
+            'slug' => 'master-electron',
+        	'price' => 10.00,
         ]);
 
         DB::table('courses')->insert([
@@ -26,7 +27,8 @@ class CoursesTableSeeder extends Seeder
         	'category_id' => 1,
         	'sub_category_id' => 1,
             'author_id' => 1,
-        	'price' => 10.00
+            'slug' => 'test',
+        	'price' => 10.00,
         ]);
 
         DB::table('courses')->insert([
@@ -35,7 +37,8 @@ class CoursesTableSeeder extends Seeder
         	'category_id' => 1,
         	'sub_category_id' => 1,
             'author_id' => 1,
-        	'price' => 10.00
+            'slug' => 'test-2',
+        	'price' => 10.00,
         ]);
 
         DB::table('courses')->insert([
@@ -44,7 +47,8 @@ class CoursesTableSeeder extends Seeder
         	'category_id' => 1,
         	'sub_category_id' => 1,
             'author_id' => 1,
-        	'price' => 10.00
+            'slug' => 'test-3',
+        	'price' => 10.00,
         ]);
     }
 }

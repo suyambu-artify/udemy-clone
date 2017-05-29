@@ -17,7 +17,8 @@
 <body>
     <div id="app">
         
-        @include('layouts.base.nav');
+        @include('layouts.base.nav')
+        @include('layouts.base.sub-nav')
 
         {{-- <nav class="navbar navbar-default navbar-static-top">
             <div class="container">

@@ -19,3 +19,4 @@ Route::get('/courses', 'CourseController@index')->middleware('auth')->name('home
 Route::get('/courses/{category}', 'CourseController@show')->name('course-category');
 Route::get('/courses/{category}/{subCategory}', 'CourseController@showSpecific')->name('category-specific');
 Route::get('/my-courses', 'CourseController@userCourses')->middleware('auth')->name('user-courses');
+Route::get('/my-course-detail/{slug}', 'CourseController@myDetailCourse')->middleware('auth')->name('my-course-detail');

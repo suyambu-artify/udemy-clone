@@ -15,4 +15,9 @@ class Course extends Model
     {
     	return $this->belongsTo('App\User');
     }
+
+    public function slug()
+    {
+    	return $this->belongsTo('App\Models\Category');
+    }
 }
