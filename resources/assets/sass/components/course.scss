@@ -35,3 +35,12 @@
    content: "\2605";
    position: absolute;
 }
+
+.progress {
+    width: 100%;
+    background-color: grey;
+}
+.bar {
+    height: 30px;
+    background-color: green;
+}
