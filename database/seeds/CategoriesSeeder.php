@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class CategoriesTableSeeder extends Seeder
+class CategoriesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -31,7 +31,7 @@ class CategoriesTableSeeder extends Seeder
     	foreach($defaults as $record) {
     		DB::table('categories')->insert([
     			'title' => $record['title'],
-                'slug' => $record['slug']
+                'slug' => $record['slug'],
     		]);
     	}
         

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePivotCoursesTable extends Migration
+class CreateLecturesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreatePivotCoursesTable extends Migration
      */
     public function up()
     {
-        Schema::create('course_user', function(Blueprint $table) {
-            $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
+        Schema::create('lectures', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('title');
+            $table->integer('lesson_id')->unsigned();
+            $table->foreign('lesson_id')->references('id')->on('lessons');
             $table->integer('course_id')->unsigned();
             $table->foreign('course_id')->references('id')->on('courses');
-            $table->integer('lessons_completed');
-            $table->integer('lessons_total');
+            $table->integer('order');
         });
     }
 
@@ -30,6 +31,6 @@ class CreatePivotCoursesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('course_user');
+        Schema::drop('lectures');
     }
 }
