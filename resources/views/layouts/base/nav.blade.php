@@ -30,7 +30,7 @@
             </div>
             <div class="nav-search">
                 <form class="form">
-                    <input autocomplete="false" type="text" name="search" />
+                    <input autocomplete="false" type="text" name="search" placeholder="Search for Courses" />
                     <button class="nav-btn fa fa-search"></button>
                 </form>
             </div>
@@ -40,21 +40,7 @@
             <div class="select-option">
                 <span><a href="{{ route('user-courses') }}">My Courses</a></span>
             </div>
-        </div>
-
-        
+        </div>  
     </div>
-
-    <ul class="sub-nav text-center">
-        <li>Development</li>
-        <li>Business</li>
-        <li>IT &amp; Software</li>
-        <li>Personal Development</li>
-        <li>Design</li>
-        <li>Marketing</li>
-        <li>Office Productivity</li>
-        <li>Music</li>
-        <li>Health &amp; Fitness</li>
-    </ul>
 
 </nav>

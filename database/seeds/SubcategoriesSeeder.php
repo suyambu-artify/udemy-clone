@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class SubcategoriesTableSeeder extends Seeder
+class SubcategoriesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -19,6 +19,7 @@ class SubcategoriesTableSeeder extends Seeder
     		DB::table('sub_categories')->insert([
     			'title' => 'sub-' . $i,
                 'slug' => 'sub-' . $i,
+                'category_id' => 1
     		]);
     	}
         

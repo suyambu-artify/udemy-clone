@@ -1,6 +1,6 @@
 nav {
+	border-top: 4px solid #17aa1c;
 	background: #fff;
-	margin-bottom: 40px;
 	ul {
 		margin: 0;
 		padding: 0;
@@ -98,10 +98,12 @@ nav {
 		}
 
 		input {
-			padding: 13px 13px;
-		    margin: 0px;
-		    width: 100%;
-		    border: none;
+			padding: 12px 13px;
+			padding-left: 66px;
+			font-size: 15px;
+			margin: 0px;
+			width: 100%;
+			border: none;
 		}
 
 		input:focus {
@@ -123,16 +125,22 @@ nav {
 		    position: absolute;
 	}
 
-	.sub-nav {
-		background: inherit;
-		padding: 10px 10px;
-		li {
-			display: inline-block;
-			padding-right: 45px;
-		}
+}
 
-		li:last-child {
-			padding-right: 0;
-		}
+.sub-container {
+	background: #fff;
+	margin-bottom: 40px;
+	.sub-nav {
+			background: inherit;
+			padding: 10px 10px;
+			li {
+				display: inline-block;
+				padding-right: 45px;
+			}
+
+			li:last-child {
+				padding-right: 0;
+			}
 	}
 }
+

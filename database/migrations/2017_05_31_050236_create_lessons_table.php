@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AlterCategoryTable extends Migration
+class CreateLessonsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class AlterCategoryTable extends Migration
      */
     public function up()
     {
-        Schema::table('categories', function (Blueprint $table) {
-            $table->string('slug');
+        Schema::create('lessons', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('video_url');
+            $table->float('time',4,2);
         });
     }
 
@@ -25,6 +27,6 @@ class AlterCategoryTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('lessons');
     }
 }
