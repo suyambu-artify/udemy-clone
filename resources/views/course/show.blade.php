@@ -8,7 +8,7 @@
 				</div>
 				<div class="col-lg-6">
 					<h2>{{ $course->title }}</h2>
-					<a class="btn btn-primary">Continue to lecture 12</a>
+					<a class="btn btn-primary">Continue to lecture {{ $course->completed()->lessons_completed + 1 }}</a>
 					<div class="rating pad-sm">
 						<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
 					</div>
