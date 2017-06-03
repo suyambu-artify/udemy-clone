@@ -24,6 +24,12 @@ class CourseController extends Controller
     	return view('course.index', compact('courses'));
     }
 
+    public function detail(Request $request)
+    {
+        $course = Course::where('slug', '=', $request->course)->first();
+        return view('course.detail', compact('course'));
+    }
+
     public function show(Request $request)
     {
         $category = Category::where('slug', '=', $request->category)->first();

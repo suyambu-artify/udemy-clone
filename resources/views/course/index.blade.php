@@ -6,7 +6,7 @@
 				@foreach($courses as $i => $course)
 					
 					<div class="col-lg-3 text-center pad-md">
-						<a style="display:inline-block" class="js-popover" data-id="popover-{{ $i }}" data-animation="true">
+						<a href="{{ route('course-detail', ['course' => $course->slug] ) }}" style="display:inline-block" class="js-popover" data-id="popover-{{ $i }}" data-animation="true">
 							<div class="course-item-container">
 								<img class="img img-responsive" src="{{ $course->image }}" />
 								<div class="course-item-bottom">

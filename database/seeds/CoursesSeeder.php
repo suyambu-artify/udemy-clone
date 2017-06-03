@@ -17,7 +17,7 @@ class CoursesSeeder extends Seeder
 
         DB::table('courses')->insert([
         	'title' => 'Master Electron: Desktop Apps using HTML, JavaScript & CSS',
-        	'image' => 'http://placehold.it/250x250',
+        	'image' => $faker->imageUrl($width = 640, $height = 480),
         	'category_id' => 1,
         	'sub_category_id' => 1,
             'author_id' => 1,
@@ -30,7 +30,7 @@ class CoursesSeeder extends Seeder
 
         DB::table('courses')->insert([
         	'title' => 'test',
-        	'image' => 'http://placehold.it/250x250',
+        	'image' => $faker->imageUrl($width = 640, $height = 480),
         	'category_id' => 1,
         	'sub_category_id' => 1,
             'author_id' => 1,
@@ -43,7 +43,7 @@ class CoursesSeeder extends Seeder
 
         DB::table('courses')->insert([
         	'title' => 'test 2',
-        	'image' => 'http://placehold.it/250x250',
+        	'image' => $faker->imageUrl($width = 640, $height = 480),
         	'category_id' => 1,
         	'sub_category_id' => 1,
             'author_id' => 1,
@@ -56,7 +56,7 @@ class CoursesSeeder extends Seeder
 
         DB::table('courses')->insert([
         	'title' => 'test 3',
-        	'image' => 'http://placehold.it/250x250',
+        	'image' => $faker->imageUrl($width = 640, $height = 480),
         	'category_id' => 1,
         	'sub_category_id' => 1,
             'author_id' => 1,
