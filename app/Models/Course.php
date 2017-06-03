@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Course extends Model
 {
-    protected $appends = ['formatted_date'];
+    protected $appends = ['formatted_date', 'language'];
 
     public function users()
     {
@@ -39,5 +39,15 @@ class Course extends Model
         // May 15th, 2017, 2:45pm
         $dt = new Carbon($this->created_at);
         return $dt->format('m/Y');
+    }
+
+    public function reviews()
+    {
+        return $this->hasMany('App\Models\Review');
+    }
+
+    public function getlanguageAttribute()
+    {
+        return ucfirst($this->languages);
     }
 }
