@@ -50,4 +50,9 @@ class Course extends Model
     {
         return ucfirst($this->languages);
     }
+
+    public function lectures()
+    {
+        return $this->hasMany('App\Models\Lecture');
+    }
 }

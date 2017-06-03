@@ -1,0 +1,13 @@
+.hide-content {
+	max-height: 260px;
+	overflow: hidden;
+}
+
+.read-more {
+	background: linear-gradient(hsla(0,0%,100%,0),hsla(0,0%,100%,.95),#fff);
+    bottom: 0;
+    display: block;
+    padding-top: 30px;
+    position: absolute;
+    width: 100%;
+}

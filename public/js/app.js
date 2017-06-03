@@ -801,6 +801,13 @@ $(document).ready(function () {
 			return $(id).html();
 		}
 	});
+
+	$('.read-more').click(function (e) {
+		e.preventDefault();
+		var target = '#' + $(this).data('target');
+		$(target).toggleClass('hide-content');
+		$(target).hasClass('hide-content') ? $(this).html('View More') : $(this).html('View Less');
+	});
 });
 
 /***/ }),
