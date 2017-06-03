@@ -5,7 +5,7 @@
 			<div class="pad">
 				@foreach($courses as $course)
 					
-					<div class="col-lg-3 text-center">
+					<div class="col-lg-3 text-center pad-md">
 						<div class="course-item-container">
 							<img class="img img-responsive" src="{{ $course->image }}" />
 							<div class="course-item-bottom">
