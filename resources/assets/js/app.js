@@ -20,3 +20,18 @@ Vue.component('example', require('./components/Example.vue'));
 const app = new Vue({
     el: '#app'
 });
+
+
+$(document).ready(function() {
+	$('.js-popover').popover({
+		trigger: 'hover',
+		placement: 'center',
+		html: true,
+		content: function() {
+			var id = '#' + $(this).data('id');
+			return $(id).html();
+		}
+	});
+
+	
+})

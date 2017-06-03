@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Course;
 use App\Models\Category;
 use App\Models\SubCategory;
+use Illuminate\Support\Facades\DB;
 
 class CourseController extends Controller
 {
@@ -22,6 +23,15 @@ class CourseController extends Controller
     {
     	$courses = Course::paginate(20);
     	return view('course.index', compact('courses'));
+    }
+
+    public function detail(Request $request)
+    {
+        $course = Course::where('slug', '=', $request->course)->first();
+        $average = number_format($course->reviews()->avg('rating'), 1);
+        $reviewCount = count($course->reviews);
+        $studentCount = DB::table('course_user')->where('course_id', '=', $course->id)->count();
+        return view('course.detail', compact('course', 'reviewCount', 'studentCount', 'average'));
     }
 
     public function show(Request $request)
