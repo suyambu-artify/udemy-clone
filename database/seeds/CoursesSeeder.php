@@ -58,5 +58,33 @@ class CoursesSeeder extends Seeder
             'requirements' => '<li>A mac</li>',
             'description' => '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque maiores, fuga neque, id aliquid eligendi omnis sunt aliquam, quibusdam culpa corporis ipsum assumenda enim architecto eos cumque veritatis fugit vel.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis delectus deserunt minima sunt laboriosam illum architecto assumenda magnam, porro, inventore fuga at sapiente enim vero repellat praesentium doloribus maxime et.</p>',
         ]);
+
+        $faker = Faker\Factory::create();
+
+
+        for ($i = 0; $i < 20; $i++) {
+            $requirements = '';
+            $highlights = '';
+            for($x = 0; $x < 4; $x++) {
+                $requirements .= '<li>' . $faker->sentence($nbWords = 6, $variableNbWords = true) . '</li>';
+                $highlights .= '<li>' . $faker->sentence($nbWords = 6, $variableNbWords = true) . '</li>';
+            }
+
+            DB::table('courses')->insert([
+                'title' => $faker->sentence($nbWords = 6, $variableNbWords = true),
+                'image' => $faker->imageUrl($width = 640, $height = 480),
+                'category_id' => $faker->numberBetween($min = 1, $max = 3),
+                'sub_category_id' => $faker->numberBetween($min = 1, $max = 3),
+                'author_id' => $faker->numberBetween($min = 1, $max = 3),
+                'slug' => $faker->slug,
+                'price' => 10.00,
+                'requirements' => $requirements,
+                'highlights' => $highlights, 
+                'description' => '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque maiores, fuga neque, id aliquid eligendi omnis sunt aliquam, quibusdam culpa corporis ipsum assumenda enim architecto eos cumque veritatis fugit vel.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis delectus deserunt minima sunt laboriosam illum architecto assumenda magnam, porro, inventore fuga at sapiente enim vero repellat praesentium doloribus maxime et.</p>',
+            ]);
+
+        }
+
+        
     }
 }

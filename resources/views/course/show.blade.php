@@ -21,4 +21,22 @@
 			</div>
 		</div>
 	</div>
+
+	<div class="container">
+		<div class="row">
+			<h2><strong>About this Course</strong></h2>
+			{!! $course->description !!}
+			<hr/>
+			<h2>Features</h2>
+			<ul>
+				{!! $course->highlights !!}
+			</ul>
+			<hr/>
+		</div>
+
+		<div class="row">
+			<h2>Instructor</h2>
+			{!! $course->author->bio !!}
+		</div>
+	</div>
 @endsection
