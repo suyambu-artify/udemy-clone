@@ -788,7 +788,19 @@ window.Vue = __webpack_require__(37);
 Vue.component('example', __webpack_require__(34));
 
 var app = new Vue({
-  el: '#app'
+	el: '#app'
+});
+
+$(document).ready(function () {
+	$('.js-popover').popover({
+		trigger: 'hover',
+		placement: 'center',
+		html: true,
+		content: function content() {
+			var id = '#' + $(this).data('id');
+			return $(id).html();
+		}
+	});
 });
 
 /***/ }),

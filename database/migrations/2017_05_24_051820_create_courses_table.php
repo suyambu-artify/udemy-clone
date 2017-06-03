@@ -27,6 +27,7 @@ class CreateCoursesTable extends Migration
             $table->integer('sub_category_id')->unsigned();
             $table->foreign('sub_category_id')->references('id')->on('sub_categories');
             $table->text('requirements')->nullable();
+            $table->text('excerpt')->nullable();
             $table->text('description')->nullable();
             $table->text('highlights')->nullable();
             $table->enum('languages', ['spanish', 'english', 'chinese'])->default('english');

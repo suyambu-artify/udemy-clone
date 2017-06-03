@@ -1,4 +1,14 @@
+.popover {
+	min-width: 400px;
+	max-width: 400px;
+}
+
 .course-item-container {
+	position: relative;
+	:hover {
+		cursor: pointer;
+	}
+
 	width: 220px;
 	text-wrap: none;
 	background: #fff;
@@ -22,6 +32,22 @@
 		color: #17aa1c;
 		font-size: 18px;
 	}
+}
+
+.course-popover:first-child {
+	display: block!important;
+}
+
+.course-item-container:hover {
+	.course-popover {
+		display: block;
+	}
+}
+
+.course-popover {
+	position: absolute;
+	top: 20px;
+	background: #fff;
 }
 
 .rating {
