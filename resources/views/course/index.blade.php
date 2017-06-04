@@ -17,7 +17,7 @@
 									</div>
 								</div>
 
-								@include('course.components.popover')
+								{{-- @include('course.components.popover')->with('index', $) --}}
 							</div>
 						</a>
 					</div>
