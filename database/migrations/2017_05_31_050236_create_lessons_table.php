@@ -15,6 +15,9 @@ class CreateLessonsTable extends Migration
     {
         Schema::create('lessons', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('title');
+            $table->integer('lecture_id')->unsigned();
+            $table->foreign('lecture_id')->references('id')->on('lectures');
             $table->string('video_url');
             $table->float('time',4,2);
         });

@@ -9,11 +9,17 @@
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
 @import 'components/course';
+@import 'components/course-lectures';
 
 @import 'components/base/nav';
 @import 'components/base/button';
 @import 'components/base/course-bar';
+@import 'components/base/hide-content';
 
 @import 'utils/color-modifiers';
 @import 'utils/spacing';
+
+body {
+	background: #f4f4f4;
+}
 
