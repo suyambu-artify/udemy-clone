@@ -61,9 +61,9 @@ class CourseController extends Controller
 
     public function myVideoCourse(Request $request)
     {
-       
+        $course = Course::where('slug', '=', $request->course)->first();
         $lesson = Lesson::where('position', '=', $request->video)->first();
         // dd($lesson);
-        return view('course.video-view', compact('lesson'));
+        return view('course.video-view', compact('course','lesson'));
     }
 }
