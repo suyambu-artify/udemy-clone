@@ -20,7 +20,7 @@ class CreateLecturesTable extends Migration
             $table->foreign('lesson_id')->references('id')->on('lessons');
             $table->integer('course_id')->unsigned();
             $table->foreign('course_id')->references('id')->on('courses');
-            $table->integer('order');
+            $table->integer('position');
         });
     }
 
@@ -31,6 +31,7 @@ class CreateLecturesTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::drop('lectures');
     }
 }

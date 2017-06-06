@@ -19,7 +19,6 @@ class CreatePivotCoursesTable extends Migration
             $table->integer('course_id')->unsigned();
             $table->foreign('course_id')->references('id')->on('courses');
             $table->integer('lessons_completed');
-            $table->integer('lessons_total');
         });
     }
 
@@ -30,6 +29,7 @@ class CreatePivotCoursesTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::drop('course_user');
     }
 }

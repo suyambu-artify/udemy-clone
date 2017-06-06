@@ -8,14 +8,14 @@
 				</div>
 				<div class="col-lg-6">
 					<h2>{{ $course->title }}</h2>
-					<a class="btn btn-primary">Continue to lecture {{ $course->completed()->lessons_completed + 1 }}</a>
+					<a class="btn btn-primary" href="{{ route('my-course-video', ['course' => $course->slug, 'video' => $position ]) }}">Continue to lecture {{ $position}}</a>
 					<div class="rating pad-sm">
 						<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
 					</div>
-					<p>{{ $course->completed()->lessons_completed }} out of {{ $course->completed()->lessons_total }} completed </p>
+					<p>{{ $course->completed()->lessons_completed }} out of {{ $course->lessons_total }} completed </p>
 
 					<div class="progress">
-						<div class="bar" style="width:{{ ($course->completed()->lessons_completed / $course->completed()->lessons_total) * 100 }}%;"></div>
+						<div class="bar" style="width:{{ ($course->completed()->lessons_completed / $course->lessons_total) * 100 }}%;"></div>
 					</div>
 				</div>
 			</div>

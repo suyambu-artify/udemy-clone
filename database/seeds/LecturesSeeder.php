@@ -15,21 +15,21 @@ class LecturesSeeder extends Seeder
         	'title' => 'Lecture 1',
         	'lesson_id' => 1,
         	'course_id' => 1,
-        	'order' => 1,
+        	'position' => 1,
         ]);
 
         DB::table('lectures')->insert([
             'title' => 'Lecture 2',
             'lesson_id' => 2,
             'course_id' => 1,
-            'order' => 2,
+            'position' => 2,
         ]);
 
         DB::table('lectures')->insert([
             'title' => 'Lecture 3',
             'lesson_id' => 3,
             'course_id' => 1,
-            'order' => 3,
+            'position' => 3,
         ]);
     }
 }

@@ -32,6 +32,7 @@ class CreateCoursesTable extends Migration
             $table->text('highlights')->nullable();
             $table->enum('languages', ['spanish', 'english', 'chinese'])->default('english');
             $table->decimal('price', 5, 2);
+            $table->integer('lessons_total')->nullable();
             $table->timestamps();
         });
     }
@@ -43,6 +44,7 @@ class CreateCoursesTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::drop('courses');
     }
 }
