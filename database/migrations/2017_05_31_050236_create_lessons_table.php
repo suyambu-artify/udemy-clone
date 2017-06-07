@@ -20,6 +20,7 @@ class CreateLessonsTable extends Migration
             $table->foreign('lecture_id')->references('id')->on('lectures');
             $table->string('video_url');
             $table->float('time',4,2);
+            $table->integer('position');
         });
     }
 
@@ -30,6 +31,7 @@ class CreateLessonsTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::drop('lessons');
     }
 }

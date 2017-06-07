@@ -14,29 +14,25 @@ class CourseUserSeeder extends Seeder
         DB::table('course_user')->insert([
         	'user_id' => 1,
         	'course_id' => 2,
-        	'lessons_completed' => 12,
-        	'lessons_total' => 45,
+        	'lessons_completed' => 1,
         ]);
 
         DB::table('course_user')->insert([
         	'user_id' => 1,
         	'course_id' => 1,
-        	'lessons_completed' => 10,
-        	'lessons_total' => 15,
+        	'lessons_completed' => 2,
         ]);
 
         DB::table('course_user')->insert([
         	'user_id' => 2,
         	'course_id' => 5,
-        	'lessons_completed' => 17,
-        	'lessons_total' => 55,
+        	'lessons_completed' => 2,
         ]);
 
         DB::table('course_user')->insert([
         	'user_id' => 1,
         	'course_id' => 2,
-        	'lessons_completed' => 15,
-        	'lessons_total' => 25,
+        	'lessons_completed' => 2,
         ]);
     }
 }

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Course;
+use App\Models\Lesson;
+use App\Models\Lecture;
 use App\Models\Category;
 use App\Models\SubCategory;
 use Illuminate\Support\Facades\DB;
@@ -53,6 +55,15 @@ class CourseController extends Controller
     {
 
         $course = Course::where('slug', '=', $request->slug)->first();
-        return view('course.show', compact('course'));
+        $position = $course->lectures()->where('position', '=', $course->completed()->lessons_completed + 1)->first()->position;
+        return view('course.show', compact('course', 'position'));
+    }
+
+    public function myVideoCourse(Request $request)
+    {
+        $course = Course::where('slug', '=', $request->course)->first();
+        $lesson = Lesson::where('position', '=', $request->video)->first();
+        // dd($lesson);
+        return view('course.video-view', compact('course','lesson'));
     }
 }

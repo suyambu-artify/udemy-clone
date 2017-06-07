@@ -8,6 +8,9 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+window.plyr = require('plyr');
+
+require('plyr/src/scss/plyr.scss')
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
