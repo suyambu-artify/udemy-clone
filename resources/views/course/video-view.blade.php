@@ -1,12 +1,12 @@
 @extends('layouts.video')
 @section('styles')
 <style>
-	video {
+/*	video {
 	    position: fixed; right: 0; bottom: 0;
 	    min-width: 100%; min-height: 100%;
 	    width: auto; height: auto; z-index: 997;
 	    background-size: cover;
-	}
+	}*/
 
 	.side-toggle {
 		position: absolute;
@@ -20,19 +20,25 @@
 		position: absolute;
 		top: 0;
 		height: 100%;
+		width: 30%;
 		background: #fff;
 	}
 
 	.close-btn {
 		position: absolute;
-		left: 246px;
+		left: 32%;
 		top: 20px;
 		z-index: 999;
 		color: #fff;
 		font-size: 28px;
 		cursor: pointer;
 	}
-
+	
+	.lesson a {
+		width: 100%;
+    	height: 100%;
+    	display: block;
+	}
 </style>
 @endsection
 @section('content')
@@ -55,29 +61,27 @@
 			<div id="lesson-{{ $lecture->id }}" class="course-lesson collapse">
 				@foreach($lecture->lessons as $lesson)
 					<div class="lesson">
-					<span><a href="{{ route('my-course-video', ['course' => $course->slug, 'video' => $lesson->position ]) }}">{{ $lesson->title }}</a></span> 
-					<span class="lesson-time">{{ $lesson->time }}</span></div>
+					<span>
+					<a href="{{ route('my-course-video', ['course' => $course->slug, 'video' => $lesson->position ]) }}">{{ $lesson->title }} <span class="lesson-time">{{ $lesson->time }}</span></div></a>
+					</span> 
+					
 				@endforeach
 			</div>
 			@endforeach
 		</div>
 	</div>
 	<span class="close-btn hidden">X</span>
-	<div class="container">
-		<div class="row pad">
-			<div class="dark">
-				<button class="side-toggle"><i class="fa fa-bars" aria-hidden="true"></i></button>
-			</div>
-			<video id="vid1" controls crossorigin autoplay>
-			  <source src="{{ $lesson->video_url }}" type="video/mp4">
-			</video>
-		</div>
+	<div class="dark">
+		<button class="side-toggle"><i class="fa fa-bars" aria-hidden="true"></i></button>
 	</div>
+	<video id="vid1" controls crossorigin>
+	  <source src="{{ $lesson->video_url }}" type="video/mp4">
+	</video>
 @endsection
 
 @section('scripts')
 	<script>
-		// var players = plyr.setup({autoplay: true});
+		var players = plyr.setup({autoplay: true});
 
 		document.getElementById('vid1').addEventListener('loadedmetadata', function() {
   			this.currentTime = 0;

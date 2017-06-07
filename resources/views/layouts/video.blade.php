@@ -18,8 +18,8 @@
 <body>
     <div id="app">
         
-        @include('layouts.base.nav')
-        @include('layouts.base.sub-nav')
+        {{-- @include('layouts.base.nav') --}}
+        {{-- @include('layouts.base.sub-nav') --}}
         @yield('content')
     </div>
 
