@@ -11,8 +11,9 @@ class Lesson extends Model
         return $this->belongsTo('App\Models\Lecture');
     }
 
-    // public function course()
-    // {
-    // 	return $this->
-    // }
+    public function fetchVideoLocation()
+    {
+    	
+    	// return $this->belongsTo('App\Models\a')
+    }
 }

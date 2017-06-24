@@ -63,7 +63,7 @@ class CourseController extends Controller
     {
         $course = Course::where('slug', '=', $request->course)->first();
         $lesson = Lesson::where('position', '=', $request->video)->first();
-        // dd($lesson);
+        $time = $lesson->fetchVideoLocation();
         return view('course.video-view', compact('course','lesson'));
     }
 }
