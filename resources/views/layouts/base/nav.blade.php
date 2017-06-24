@@ -29,7 +29,8 @@
                 
             </div>
             <div class="nav-search">
-                <form class="form">
+                <form class="form" method="POST" action="{{ route('course-query') }}">
+                    {{ csrf_field() }}
                     <input autocomplete="false" type="text" name="search" placeholder="Search for Courses" />
                     <button class="nav-btn fa fa-search"></button>
                 </form>

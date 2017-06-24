@@ -22,3 +22,7 @@ Route::get('/courses/c/{category}/{subCategory}', 'CourseController@showSpecific
 Route::get('/my-courses', 'CourseController@userCourses')->middleware('auth')->name('user-courses');
 Route::get('/my-course-detail/{slug}', 'CourseController@myDetailCourse')->middleware('auth')->name('my-course-detail');
 Route::get('/{course}/{video}', 'CourseController@myVideoCourse')->middleware('auth')->name('my-course-video');
+
+Route::get('/search', 'SearchController@search')->name('course-search');
+Route::post('/search', 'SearchController@query')->name('course-query');
+
