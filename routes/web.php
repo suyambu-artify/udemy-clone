@@ -30,4 +30,5 @@ Route::get('/instructor', 'InstructorController@index')->name('instructor-landin
 Route::get('/course/{id}/edit-course', 'InstructorController@edit')->name('course-edit');
 
 Route::post('/course/edit/{id}', 'InstructorController@update')->name('course-update');
+Route::post('/bla','InstructorController@create')->name('course-create');
 

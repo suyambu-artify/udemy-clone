@@ -27,7 +27,7 @@ class InstructorController extends Controller
     {
 
         $user = Auth::user();
-        $courses = Course::where('author_id', '=', $user->id)->get();
+        $courses = Course::where('author_id', '=', $user->id)->paginate(5);
         return view('instructor.index', compact('courses'));
     }
 
@@ -43,5 +43,16 @@ class InstructorController extends Controller
         $course->title = $request->title;
         $course->save();
         return back();
+    }
+
+    public function create(Request $request)
+    {
+        $course = new Course();
+        $course->author_id = Auth::user()->id;
+        $course->title = $request->title;
+        $course->slug = 'test-1';
+        $course->save();
+        return redirect()->route('course-edit', ['id' => $course->id]);
+
     }
 }

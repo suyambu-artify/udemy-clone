@@ -61,9 +61,14 @@ class CourseController extends Controller
 
     public function myVideoCourse(Request $request)
     {
+      
         $course = Course::where('slug', '=', $request->course)->first();
-        $lesson = Lesson::where('position', '=', $request->video)->first();
-        $time = $lesson->fetchVideoLocation();
+        if(!$course) {
+            // dd($course);
+            return redirect()->route('home');
+        }
+        $query = Lesson::where('position', '=', $request->video)->first();
+        $lesson = $query ? $query : null;
         return view('course.video-view', compact('course','lesson'));
     }
 }

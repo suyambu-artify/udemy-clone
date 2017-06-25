@@ -10,6 +10,7 @@
 			<form class="form" method="POST" action="{{ route('course-update', ['id' => $course->id]) }}">
 				{{ csrf_field() }}
 				<div class="form-group">
+					<label for="title">Title</label>
 					<input name="title" class="form-control" type="text" value="{{ $course->title }}" />
 				</div>
 				<div class="form-group">

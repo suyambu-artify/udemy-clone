@@ -40,7 +40,7 @@
                     <span><a href="{{ route('instructor-landing') }}">Instructor</a></span>
                     <div class="instructor-dropdown">
                         <ul>
-                            <li><a href="{{ route('instructor-landing') }}">Create a Course</a></li>
+                            <li><a href="" data-toggle="modal" data-target="#myModal">Create a Course</a></li>
                         </ul>
                     </div>
                 </div>
@@ -49,6 +49,28 @@
                 <span><a href="{{ route('user-courses') }}">My Courses</a></span>
             </div>
         </div>  
+    </div>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Create A Course</h4>
+          </div>
+          <div class="modal-body">
+            <form method="POST" action="{{ route('course-create') }}">
+                {{ csrf_field() }}
+                <div class="form-group">
+                    <input type="text" placholder="Course Title" name="title" class="form-control" placeholder="My Course Title">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary">Create Course</button>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
 
 </nav>
