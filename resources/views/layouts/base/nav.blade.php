@@ -36,7 +36,14 @@
                 </form>
             </div>
             <div class="select-option">
-                <span>Instructor</span>
+                <div class="instructor">
+                    <span>Instructor</span>
+                    <div class="instructor-dropdown">
+                        <ul>
+                            <li><a href="{{ route('instructor-landing') }}">Create a Course</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
             <div class="select-option">
                 <span><a href="{{ route('user-courses') }}">My Courses</a></span>

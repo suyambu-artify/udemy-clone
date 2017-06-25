@@ -26,3 +26,5 @@ Route::get('/{course}/{video}', 'CourseController@myVideoCourse')->middleware('a
 Route::get('/search', 'SearchController@search')->name('course-search');
 Route::post('/search', 'SearchController@query')->name('course-query');
 
+Route::get('/instructor', 'InstructorController@index')->name('instructor-landing');
+
