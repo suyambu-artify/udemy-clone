@@ -6,12 +6,51 @@
 		</div>
 	</div>
 	<div class="container">
-		<ul>
-			<li>
-				
-			</li>
-		</ul>
+		<div class="row">
+			<div class="col-xs-3 pad-md-top">
+				<div class="row">
+					<div class="col-xs-6">
 
+						<div class="dropdown">
+						  <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Level
+						  <span class="caret"></span></button>
+						  <ul class="dropdown-menu">
+						  	@foreach($levels as $level)
+						  		<li role="presentation">
+						  		<a role="menuitem" tabindex="-1">
+						  		<span class="checkbox"><label>
+						  		<input type="checkbox" ng-checked="">
+						  		<span class="checkbox-label">{{ $level }}<span class="uni-embed">(967)</span></span> </label> </span> </a> </li>
+						  	@endforeach
+						  </ul>
+						</div>
+					</div>
+					<div class="col-xs-6">
+						<div class="dropdown">
+							<button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Price
+							<span class="caret"></span></button>
+							<ul class="dropdown-menu">
+								<li role="presentation">
+									<a role="menuitem" tabindex="-1">
+									<span class="checkbox"><label>
+									<input type="checkbox" ng-checked="">
+									<span class="checkbox-label">Free</span> 
+									</a>
+								</li>
+								<li role="presentation">
+									<a role="menuitem" tabindex="-1">
+									<span class="checkbox"><label>
+									<input type="checkbox" ng-checked="">
+									<span class="checkbox-label">Paid</span> 
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
 		@foreach($courses as $course)
 			<div class="pad">
 				<div class="border-gray">
@@ -43,4 +82,10 @@
 			</div>
 		@endforeach
 	</div>
+	<div class="container">
+		{{ $courses->links() }}
+	</div>
+@endsection
+@section('scripts')
+	<div></div>
 @endsection
