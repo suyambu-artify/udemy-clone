@@ -37,7 +37,7 @@
             </div>
             <div class="select-option">
                 <div class="instructor">
-                    <span>Instructor</span>
+                    <span><a href="{{ route('instructor-landing') }}">Instructor</a></span>
                     <div class="instructor-dropdown">
                         <ul>
                             <li><a href="{{ route('instructor-landing') }}">Create a Course</a></li>

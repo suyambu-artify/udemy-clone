@@ -27,4 +27,7 @@ Route::get('/search', 'SearchController@search')->name('course-search');
 Route::post('/search', 'SearchController@query')->name('course-query');
 
 Route::get('/instructor', 'InstructorController@index')->name('instructor-landing');
+Route::get('/course/{id}/edit-course', 'InstructorController@edit')->name('course-edit');
+
+Route::post('/course/edit/{id}', 'InstructorController@update')->name('course-update');
 
