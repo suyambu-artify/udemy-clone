@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Course extends Model
 {
-    protected $appends = ['formatted_date', 'language'];
+    protected $appends = ['formatted_date', 'language', 'average_review'];
 
     public function users()
     {
@@ -44,6 +44,11 @@ class Course extends Model
     public function reviews()
     {
         return $this->hasMany('App\Models\Review');
+    }
+
+    public function getAverageReviewAttribute()
+    {
+        return number_format($this->reviews->average('rating'), 1);
     }
 
     public function getlanguageAttribute()

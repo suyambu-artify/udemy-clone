@@ -15,6 +15,11 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
+    <style>
+        body {
+            background: #ffffff;
+        }
+    </style>
     <div id="app">
         
         @include('layouts.base.nav')
