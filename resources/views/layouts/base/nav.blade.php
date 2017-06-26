@@ -48,6 +48,17 @@
             <div class="select-option">
                 <span><a href="{{ route('user-courses') }}">My Courses</a></span>
             </div>
+            <div class="select-option">
+                
+                <a>Cart</a>
+                <div class="cart-dropdown">
+                    <ul>
+                        @foreach($cart->cartItems as $item)
+                            <li>{{ $item->id }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
         </div>  
     </div>
 

@@ -5,6 +5,9 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use App\Models\Category;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Cart;
+use Illuminate\Contracts\View\Factory as ViewFactory;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,10 +16,10 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(ViewFactory $view)
     {
         Schema::defaultStringLength(191);
-        view()->share('categories', Category::with('subcategory')->get());
+        $view->composer('*', 'App\Http\ViewComposers\GlobalComposer');
     }
 
     /**

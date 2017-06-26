@@ -25,7 +25,14 @@
 							<h2 class="no-margin">{{ $course->price }}</h2>
 
 							<button>Buy Now</button>
-							<button class="add-to-cart text-green">Add to Cart</button>
+
+							<form action="{{ route('cart-add') }}" method="POST">
+							  {!! csrf_field() !!}
+							  <input type="hidden" name="id" value="{{ $course->id }}">
+							  <input type="hidden" name="title" value="{{ $course->title }}">
+							  <input type="hidden" name="price" value="{{ $course->price }}">
+							  <button type="submit" class="add-to-cart text-green">Add to Cart</button>
+							</form>
 							<div class="text-center"><span>30-Day Money-Back Guarantee</span></div>
 
 							<h4>Includes</h4>

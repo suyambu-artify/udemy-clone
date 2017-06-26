@@ -19,6 +19,8 @@ class UsersSeeder extends Seeder
             'excerpt' => '<p>He is one cool cat</p>',
         ]);
 
+        DB::table('carts')->insert(['user_id' => 1]);
+
         DB::table('users')->insert([
             'name' => 'John Smith',
             'email' => 'yolo@admin.com',
@@ -27,6 +29,8 @@ class UsersSeeder extends Seeder
             'excerpt' => '<p>He is one cool cat</p>',
         ]);
 
+        DB::table('carts')->insert(['user_id' => 2]);
+
         DB::table('users')->insert([
             'name' => 'Mallory Smith',
             'email' => 'macCat@admin.com',
@@ -34,6 +38,8 @@ class UsersSeeder extends Seeder
             'bio' => '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid error quisquam dolor perspiciatis, tempore, est praesentium at voluptatem aspernatur ipsum veritatis deleniti, rerum placeat quam ut quibusdam. Iusto eligendi, praesentium!Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p><p> Temporibus laborum ea adipisci quaerat excepturi repellendus dolorum id, sint, iste at, ipsam nulla in sed libero autem dolore? Atque quas, incidunt.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate beatae dicta non vel aut, nesciunt minus nobis fugit? Necessitatibus alias asperiores inventore eveniet veniam quam perferendis dicta. Porro, maxime, nihil.</p>',
             'excerpt' => '<p>She is one cool cat</p><p>Plays hockey on the reg. Shoots hoops at the park. Owns a turtle</p>',
         ]);
+
+        DB::table('carts')->insert(['user_id' => 3]);
     }
 }
 

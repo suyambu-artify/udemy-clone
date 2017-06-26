@@ -32,3 +32,5 @@ Route::get('/course/{id}/edit-course', 'InstructorController@edit')->name('cours
 Route::post('/course/edit/{id}', 'InstructorController@update')->name('course-update');
 Route::post('/bla','InstructorController@create')->name('course-create');
 
+Route::post('/cart', 'CartController@store')->name('cart-add');
+
