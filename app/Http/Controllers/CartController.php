@@ -39,5 +39,12 @@ class CartController extends Controller
         CartItem::destroy($id);
         return back();
     }
+
+    public function purchase(Request $request)
+    {
+        $courseId = $request->id;
+        $userId = Auth::user()->id;
+        
+    }
  
 }

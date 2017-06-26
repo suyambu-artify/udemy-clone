@@ -49,6 +49,7 @@
                 <span><a href="{{ route('user-courses') }}">My Courses</a></span>
             </div>
             <div class="select-option">
+                @if($cart)
                 <div class="cart">
                     <span><a>Cart</a></span>
                     <div class="cart-dropdown">
@@ -66,6 +67,7 @@
                         </ul>
                     </div>
                 </div>
+                @endif
             </div>
         </div>  
     </div>

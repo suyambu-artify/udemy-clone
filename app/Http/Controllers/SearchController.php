@@ -30,11 +30,12 @@ class SearchController extends Controller
     {
 
     	$term = $request->search ? $request->search : "";
-    	dd($term);
+    	// dd($term);
     	$normalized = array_diff(explode(' ', $term), $this->unallowedWords);
     	$query = implode("|",$normalized);
 
     	$courses = Course::where('title', 'regexp', $term)->paginate(10);
+        $levels = ['beginner', 'intermediate', 'advanced'];
 
     	return view('course.results', compact('courses', 'term', 'levels'));
     }
