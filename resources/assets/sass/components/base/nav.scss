@@ -158,3 +158,17 @@ nav {
 		position: absolute;
 	}
 
+	.cart-dropdown {
+		display: none;
+		position: relative;
+		background: #fff;
+		padding: 15px 22px 15px 22px;
+		margin-left: -248px;
+		max-width: 300px;
+	}
+
+	.cart:hover .cart-dropdown {
+		display: block;
+		position: absolute;
+	}
+

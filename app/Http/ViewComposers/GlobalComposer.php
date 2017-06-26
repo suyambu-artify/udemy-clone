@@ -21,9 +21,7 @@ class GlobalComposer {
         if(Auth::user()) {
             $view->with('cart', Cart::where('user_id', '=', Auth::user()->id)->first()->cartItems());
             $cart = Cart::where('user_id', '=', Auth::user()->id)->first();
-
             $view->with('cart', $cart);
-
         }
         
     }

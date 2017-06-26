@@ -49,14 +49,22 @@
                 <span><a href="{{ route('user-courses') }}">My Courses</a></span>
             </div>
             <div class="select-option">
-                
-                <a>Cart</a>
-                <div class="cart-dropdown">
-                    <ul>
-                        @foreach($cart->cartItems as $item)
-                            <li>{{ $item->id }}</li>
-                        @endforeach
-                    </ul>
+                <div class="cart">
+                    <span><a>Cart</a></span>
+                    <div class="cart-dropdown">
+                        <ul>
+                            @foreach($cart->cartItems as $item)
+                                <li>
+                                <div class="col-xs-4">
+                                    <img class="img img-responsive" src="{{ $item->course->image }}" alt="">
+                                </div>
+                                <div class="col-xs-8">
+                                    <a href="{{ route('course-detail', ['slug' => $item->course->slug]) }}">{{ $item->course->title }}</a>
+                                </div>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>  
